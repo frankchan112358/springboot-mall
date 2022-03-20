@@ -29,3 +29,11 @@ SELECT product_id,
        last_modified_date
 FROM product
 WHERE product_id = :productId;
+
+INSERT INTO product (product_name, category, image_url, price, stock, description, created_date, last_modified_date)
+VALUES (:productName, :category, :imageUrl, :price, :stock, :description, :createdDate, :lastModifiedDate);
+
+UPDATE product SET product_name=:productName, category=:category, image_url=:imageUrl, price=:price, stock=:stock, description=:description, last_modified_date=:lastModifiedDate
+WHERE product_id=:productId;
+
+DELETE FROM product WHERE product_id=:productId;
