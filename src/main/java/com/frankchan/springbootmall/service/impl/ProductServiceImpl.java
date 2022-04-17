@@ -1,5 +1,6 @@
 package com.frankchan.springbootmall.service.impl;
 
+import com.frankchan.springbootmall.constant.ProductCategory;
 import com.frankchan.springbootmall.dao.ProductDao;
 import com.frankchan.springbootmall.dto.ProductRequest;
 import com.frankchan.springbootmall.model.Product;
@@ -15,8 +16,8 @@ public class ProductServiceImpl implements ProductService {
     @Autowired
     private ProductDao productDao;
 
-    @Override public List<Product> getProducts() {
-        return productDao.getProducts();
+    @Override public List<Product> getProducts(ProductCategory category, String search) {
+        return productDao.getProducts(category, search);
     }
 
     @Override public Product getProductById(Integer productId) {
